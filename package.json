@@ -23,6 +23,9 @@
     "express": "^4.17.3",
     "generate-gitignore": "^0.2.6",
     "heroku": "^7.59.2",
-    "nodemon": "^2.0.15"
+    "nodemon": "^2.0.15",
+    "morgan": "^1.10.0",
+    "mysql2": "^2.3.3",
+    "bcrypt": "^5.0.1"
   }
 }

@@ -1,18 +1,17 @@
 const express = require("express");
+const userroutes = require("./routes/product.routes.user.js");
+const cors = require("cors");
+const logger = require("morgan");
 
+var product = require("./database_mysql");
 const app = express();
-const PORT = process.env.PORT || 3001
-const cors = require('cors')
+const PORT = process.env.PORT || 5000;
 
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
 app.use(cors());
-
-
-app.get('/login',(req,res)=>{
-    res.send('hello')
-})
+app.use(logger("dev"));
+app.use("/user", userroutes);
 
 app.listen(PORT, function () {
-  console.log("listening on port 3001!");
+  console.log("listening on port 5000!");
 });
