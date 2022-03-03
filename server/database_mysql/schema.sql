@@ -3,11 +3,11 @@ CREATE DATABASE vamos;
 USE vamos;
 CREATE TABLE user (
   id int NOT NULL AUTO_INCREMENT,
-  firstName varchar(255),
-  lastName varchar(255),
+  username varchar(255),
   email varchar(255),
   password varchar(255),
   address varchar(255),
+  dateOfBirth varchar(255),
   city varchar(255),
   phoneNumber int ,
   picture varchar(255),
@@ -16,15 +16,23 @@ CREATE TABLE user (
 
 
 CREATE TABLE stadium(
-id-stadium int NOT NULL AUTO_INCREMENT,
-stadium-name varchar(255), 
+id_stadium int NOT NULL AUTO_INCREMENT,
+stadium_name varchar(255), 
 stadiumPicture varchar(255),
 typeOfSport varchar(255), 
 description varchar(255),
-city varchar(255)
-PRIMARY KEY (id-stadium),
-FOREIGN KEY (id-provider) REFERENCES provider(id-provider)
+city varchar(255),
+PRIMARY KEY (id_stadium)
 );
+-- FOREIGN KEY (id_provider) REFERENCES provider(id_provider)
+
+
+
+
+
+
+
+
 
 /* excute schema  */
 /* mysql -u root -p <server/database_mysql/schema.sql
