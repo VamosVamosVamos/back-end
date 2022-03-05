@@ -24,8 +24,21 @@ description varchar(255),
 city varchar(255),
 PRIMARY KEY (id_stadium)
 );
--- FOREIGN KEY (id_provider) REFERENCES provider(id_provider)
 
+CREATE TABLE event(
+  id_event int NOT null AUTO_INCREMENT,
+  id_team_one int NOT NULL
+  id_team_two int NOT NULL
+  time date 
+  FOREIGN KEY (id_stadium) REFERENCES stadium(id-stadium)
+  FOREIGN KEY (id) REFERENCES user (id)
+)
+CREATE TABLE team
+
+--FOREIGN KEY (id) REFERENCES user (id)
+--FOREIGN KEY (id_provider) REFERENCES provider(id_provider)
+
+CREATE TABLE 
 
 
 
