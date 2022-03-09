@@ -19,6 +19,22 @@ app.use("/user", userroutes);
 app.use("/staduim", staduimroutes);
 app.use("/event", eventroutes);
 app.use("/team", teamroutes);
+
+app.get("/test1",(req,res)=>{
+  res.send("test1")
+});
+
+
+app.get("/test",(req,res)=>{
+  db.query("select * from stadium",(err,result)=>{
+    if(err){
+      res.send(err)
+    }else{
+      res.send("helloooo worlddd")
+    }
+  })
+});
+
 app.get("/",(req, res)=> {
   var query = "SELECT * FROM stadium"
 
@@ -29,7 +45,9 @@ app.get("/",(req, res)=> {
     res.status(200).send(result);
     }
   });
-})
+});
+
+
 app.listen(PORT, function () {
   console.log(`listening on http://localhost:${PORT}`);
 });
