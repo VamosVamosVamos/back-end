@@ -22,7 +22,7 @@ const insertStaduim = function (req, res) {
 };
 
 const selectAllStaduim = function (req, res) {
-  let query = "SELECT * FROM vamos.stadium;";
+  let query = "SELECT * FROM stadium;";
 
   db.query(query, (err, result) => {
     if (err) {
