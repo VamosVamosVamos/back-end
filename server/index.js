@@ -20,8 +20,18 @@ app.use("/user", userroutes);
 app.use("/staduim", staduimroutes);
 app.use("/event", eventroutes);
 app.use("/team", teamroutes);
-app.get("/",(req,res)=>{
-  res.send("hello world")
+app.get("/",(req, res)=> {
+  let query = "SELECT * FROM stadium;";
+
+  db.query(query, (err, result) => {
+    if (err) {
+      console.log("error: ", err);
+      res.status(404).send(err);
+      return;
+    }
+    console.log("saduims: ", result);
+    res.status(200).send(result);
+  });
 })
 app.listen(PORT, function () {
   console.log(`listening on http://localhost:${PORT}`);

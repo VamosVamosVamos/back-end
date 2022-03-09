@@ -25,7 +25,7 @@ const addEvent = function (req, res) {
 };
 
 const getEvent = function (req, res) {
-  let query = "SELECT * FROM vamos.events;";
+  let query = "SELECT * FROM events;";
 
   db.query(query, (err, result) => {
     if (err) {
