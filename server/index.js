@@ -1,4 +1,5 @@
 const express = require("express");
+var db = require("./database_mysql")
 
 const cors = require("cors");
 const logger = require("morgan");
@@ -27,7 +28,7 @@ app.get("/",(req, res)=> {
     if (err) {
       console.log("error: ", err);
       res.status(404).send(err);
-      return;
+      return
     }
     console.log("saduims: ", result);
     res.status(200).send(result);
